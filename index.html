@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIDDHARTH ENTERPRISES</title>
+  <meta name="description" content="Simple, editable premium e‑commerce HTML template. Replace product cards to add your products." />
+  <style>
+    /* ----- Base ----- */
+    :root{
+      --accent:#0f766e; /* change this for brand color */
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f8fafc;
+      --radius:14px;
+      --shadow: 0 8px 20px rgba(12,18,30,0.08);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.45}
+    .container{max-width:1200px;margin:36px auto;padding:0 20px}
+
+    /* ----- Header ----- */
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    .brand h1{margin:0;font-size:20px}
+
+    /* ----- Search & filters ----- */
+    .controls{display:flex;gap:12px;align-items:center}
+    .search{padding:10px 14px;border-radius:12px;border:1px solid #e6eef6;background:white;min-width:240px}
+    .cart-btn{padding:10px 14px;background:var(--accent);color:white;border-radius:12px;border:none;cursor:pointer}
+
+    /* ----- Grid ----- */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+    .card{background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(12,18,30,0.12)}
+    .imgwrap{position:relative;border-radius:10px;overflow:hidden;height:180px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f8fafc,#ffffff)}
+    .imgwrap img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+    .badge{position:absolute;left:10px;top:10px;background:var(--accent);color:white;padding:6px 8px;border-radius:8px;font-size:12px}
+
+    .product-title{font-weight:600;margin:12px 0 6px}
+    .product-desc{font-size:13px;color:var(--muted);margin:0 0 10px}
+    .price-row{display:flex;align-items:center;gap:8px;justify-content:space-between;margin-top:auto}
+    .price{font-weight:700;font-size:18px}
+    .old{font-size:13px;color:var(--muted);text-decoration:line-through}
+
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{flex:1;padding:10px;border-radius:10px;border:1px solid transparent;background:#0ea5a1;color:white;cursor:pointer}
+    .btn.secondary{background:white;color:var(--accent);border:1px solid #e6eef6}
+
+    /* ----- Modal ----- */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
+    .modal{background:white;border-radius:14px;max-width:920px;width:100%;box-shadow:0 30px 60px rgba(2,6,23,0.6);display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
+    .modal .media{display:flex;align-items:center;justify-content:center;border-radius:10px;overflow:hidden;background:#f8fafc}
+    .modal img{max-width:100%;max-height:520px;object-fit:contain}
+    .modal .meta{padding:6px 2px}
+    .close{position:absolute;right:18px;top:18px;background:#fff;border-radius:10px;border:none;padding:8px;cursor:pointer}
+
+    /* ----- Responsive ----- */
+    @media (max-width:880px){
+      .modal{grid-template-columns:1fr;max-height:90vh;overflow:auto}
+    }
+
+    /* ----- Footer ----- */
+    footer{margin:30px 0;text-align:center;color:var(--muted)}
+
+    /* ----- Utility ----- */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="E:\FINAL\images\frive logo psd PNGGGGG.png" alt="Siddharth Enterprises Logo" style="width:56px; height:56px; border-radius:12px;">
+        </div>
+        
+        <div>
+          <h1>SIDDHARTH ENTERPRISES</h1>
+          <div class="muted" style="font-size:13px">GOOD QUALITY PRODUCT SELLER</div>
+        </div>
+      </div>
+      <div class="controls">
+        <input class="search" id="search" placeholder="SEARCH PRODUCT" />
+        <a href="contact.html" class="btn secondary">Contact Us</a>
+      </div>
+    </header>
+
+    <!-- Product Grid -->
+    <section class="grid" id="productGrid">
+
+      <!-- === Product Card (copy this block to add more products) === -->
+      <article class="card product" data-id="101" data-title="OPPAL ELEPHANT" data-price="300" data-oldprice="800" data-desc="Name : MULTICOLOR GLASS HANDICRAFT SHOWPIECE ELEPHANT PAIR FOR GIFTING & HOME DECOR ​
+
+      Material : Glass
+      
+      Type : Figurines
+      
+      Net Quantity (N) : 2
+      
+      Product Length : 2.5 Inch
+      
+      Product Height : 2.5 Inch
+      
+      Product Breadth : 5.5 Inch
+      
+      Multicolor glass handicraft showpiece Elephant Pair for decor & gifting
+      
+      This is a unique, handcrafted piece of art, created using the traditional blowair technique. The detailed carving is done manually on hot glass, which requires immense focus and precision. The result is a beautifully sculpted figure." data-image="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/e5757436-2ed4-4bf7-8486-9a6377a51849.jpg">
+        <div class="imgwrap">
+          <span class="badge">Best Seller</span>
+          <img loading="lazy" src="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/e5757436-2ed4-4bf7-8486-9a6377a51849.jpg" alt="Classic Leather Shoe">
+        </div>
+        <div class="product-title">OPPAL ELEPHANT</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹300</div>
+            <div class="old">₹800</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+
+        </div>
+      </article>
+      <!-- === /Product Card === -->
+
+      <!-- Duplicate card with different data so the template looks filled. Replace as you wish. -->
+      <article class="card product" data-id="102" data-title="GANESH JI" data-price="290" data-oldprice="800" data-desc="Name : Handicraft Premium CrystalGlass Double Face GaneshIdol | Transparent Idol for Home Temple & Office Decor, Diwali Occasion & Car Dashboard | Decorative Showpiece and Idol Gift Item.
+
+      Material : Glass
+      
+      Type : Ganesh Idol
+      
+      Product Length : 6 cm
+      
+      Product Height : 8.5 cm
+      
+      Product Breadth : 6 cm
+      
+      Net Quantity (N) : 1
+      
+      Handicraft Premium CrystalGlass Double Face GaneshIdol | Transparent Idol for Home Temple & Office Decor, Diwali Occasion & Car Dashboard | Decorative Showpiece and Idol Gift Item.." data-image="E:\FINAL\images\c.jpg">
+        <div class="imgwrap">
+          <span class="badge">New</span>
+          <img loading="lazy" src="E:\FINAL\images\c.jpg" alt="Modern Wrist Watch">
+        </div>
+        <div class="product-title">GANESH JI</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹290</div>
+            <div class="old">₹600</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+        </div>
+      </article>
+
+      <!-- Add more product cards here (copy/paste the article.product block) -->
+
+      <!-- === Product Card (copy this block to add more products) === -->
+      <article class="card product" data-id="103" data-title="SWAN" data-price="300" data-oldprice="800" data-desc="Name : Primium Glass Swan Pair Showpiece | Home Decor ,Elegant Duck Figurine for Living Room And Office Decor & Gift item
+
+      Material : Glass
+      
+      Net Quantity (N) : 2
+      
+      Product Length : 2.5
+      
+      Product Height : 2.5
+      
+      Product Breadth : 2.5
+      
+      Primium Glass Swan Pair Showpiece | Home Decor ,Elegant Duck Figurine for Living Room And Office Decor & Gift item." data-image="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/2.jpg">
+        <div class="imgwrap">
+          <span class="badge">Best Seller</span>
+          <img loading="lazy" src="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/2.jpg" alt="Classic Leather Shoe">
+        </div>
+        <div class="product-title">SWAN PAIR</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹300</div>
+            <div class="old">₹800</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+        </div>
+      </article>
+      <!-- === /Product Card === -->
+
+      <!-- === Product Card (copy this block to add more products) === -->
+      <article class="card product" data-id="104" data-title="ROSE RED GLASSES" data-price="2499" data-oldprice="3499" data-desc="Name : Daily Use PrintedJuice Glasses – Stylish & Durable Drinkware | Trendy Printed Sarbat, Water Glass Set - Pack of 6 Stylish Tumblers | red design water glass
+
+      Material : Glass
+      
+      Product Breadth : 2.5 Inch
+      
+      Product Height : 4 Inch
+      
+      Product Length : 4 Inch
+      
+      Net Quantity (N) : Pack Of 6
+      
+      Daily Use PrintedJuice Glasses – Stylish & Durable Drinkware | Trendy Printed Sarbat, Water Glass Set - Pack of 6 Stylish Tumblers | water red design glasse" data-image="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/1.jpg">
+        <div class="imgwrap">
+          <span class="badge">Best Seller</span>
+          <img loading="lazy" src="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/1.jpg" alt="Classic Leather Shoe">
+        </div>
+        <div class="product-title">ROSE RED GLASSES</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹300</div>
+            <div class="old">₹800</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+        </div>
+      </article>
+      <!-- === /Product Card === -->
+
+      <!-- === Product Card (copy this block to add more products) === -->
+      <article class="card product" data-id="105" data-title="FLOERAL YELLOW GLASSES" data-price="300" data-oldprice="800" data-desc="Name : 6 Pcs Designer Floral Glass Tumbler Set – Kitchen, Dining & GiftingElegant & Perfect for All Occasions -200mL
+
+      Material : Glass
+      
+      Product Breadth : 2.5 Inch
+      
+      Product Height : 4 Inch
+      
+      Product Length : 4 Inch
+      
+      Net Quantity (N) : Pack Of 6
+      
+      6 Pcs Designer Floral Glass Tumbler Set – Kitchen, Dining & GiftingElegant & Perfect for All Occasions -200mL" data-image="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/FLOWER%201.jpg">
+        <div class="imgwrap">
+          <span class="badge">Best Seller</span>
+          <img loading="lazy" src="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/FLOWER%201.jpg" alt="Classic Leather Shoe">
+        </div>
+        <div class="product-title">FLORAL YELLOW GLASSES</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹300</div>
+            <div class="old">₹800</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+        </div>
+      </article>
+      <!-- === /Product Card === -->
+
+      <!-- === Product Card (copy this block to add more products) === -->
+      <article class="card product" data-id="106" data-title="FLORAL GREEN GLASSES" data-price="2499" data-oldprice="3499" data-desc="Name : Stylish Green Leaf Printed Glass Tumbler Set for Water, Juice & Cold Drinks | Pack of 6
+
+      Material : Glass
+      
+      Product Breadth : 2.5 Inch
+      
+      Product Height : 4 Inch
+      
+      Product Length : 4 Inch
+      
+      Net Quantity (N) : Pack Of 6
+      
+      Add a touch of nature's beauty to your dining experience with this beautiful Green Leaf Printed Glass Tumbler Set. Perfect for daily use and for special occasions, these glasses are designed to bring a fresh, vibrant look to your home.
+      
+      ​This set of 6 glasses is made from high-quality, durable glass, ensuring they are as long-lasting as they are attractive. The unique green and yellow leaf pattern is sure to impress your guests, while the sturdy design makes them ideal for serving water, juice, soda, or any other beverage you love.
+      
+      ​Key Features :  
+      
+      ​Unique Design : Features a stylish and refreshing green leaf print that brightens up any setting.
+      
+      ​Durable & Sturdy : Crafted from tough glass to withstand daily use without chipping or cracking easily.
+      
+      ​Versatile Use : Perfect for serving all kinds of cold beverages like water, juice, milkshakes, and cold drinks.
+      
+      ​Easy to Clean : These glasses are simple to wash by hand and are also dishwasher safe.
+      
+      ​Complete Set : The pack includes 6 matching glasses, making it a great addition to your kitchen or a perfect gift for a new home.
+      
+       " data-image="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/2b6d2bf7-8e76-4d61-ba72-c363a778a372.jpg">
+        <div class="imgwrap">
+          <span class="badge">Best Seller</span>
+          <img loading="lazy" src="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/2b6d2bf7-8e76-4d61-ba72-c363a778a372.jpg" alt="Classic Leather Shoe">
+        </div>
+        <div class="product-title">FLORAL GREEN GLASSES</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹300</div>
+            <div class="old">₹800</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+        </div>
+      </article>
+      <!-- === /Product Card === -->
+      
+      <!-- === Product Card (copy this block to add more products) === -->
+      <article class="card product" data-id="107" data-title="FLORAL RED GLASSES" data-price="300" data-oldprice="800" data-desc="Name : Elegance Red Flower Printed Glass Set of 6 -Premium Floral Design Glass
+
+      Material : Glass
+      
+      Product Breadth : 2.5 Inch
+      
+      Product Height : 4 Inch
+      
+      Product Length : 4 Inch
+      
+      Net Quantity (N) : Pack Of 6
+      
+      Fancy Glass Elegance Red Flower Printed Glass Set of 6 – Premium Floral Design Glass For Party, Marriage, reception etc." data-image="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/DSC_9909.jpg">
+        <div class="imgwrap">
+          <span class="badge">Best Seller</span>
+          <img loading="lazy" src="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/DSC_9909.jpg" alt="Classic Leather Shoe">
+        </div>
+        <div class="product-title">FLORAL RED GLASSES</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹300</div>
+            <div class="old">₹800</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+        </div>
+      </article>
+      <!-- === /Product Card === -->
+      
+<!-- === Product Card (copy this block to add more products) === -->
+      <article class="card product" data-id="108" data-title="MAPLE GLASSES" data-price="300" data-oldprice="800" data-desc="Name : Premium Maple Leaf Patterned Glass (Set of 6 pcs) Water, Juice Drinks & Perfect for Gifting!"
+
+      Material : Glass
+      
+      Product Breadth : 2.5 Inch
+      
+      Product Height : 4 Inch
+      
+      Product Length : 4 Inch
+      
+      Net Quantity (N) : Pack Of 6
+      
+      Premium Maple Leaf Patterned Glass (Set of 6 pcs) Water, Juice Drinks & Perfect for Gifting!"" data-image="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/1%20(1).jpg">
+        <div class="imgwrap">
+          <span class="badge">Best Seller</span>
+          <img loading="lazy" src="file:///C:/Users/Maa%20Kela%20Devi/Desktop/html%20pics/1%20(1).jpg" alt="Classic Leather Shoe">
+        </div>
+        <div class="product-title">SUN FLOWER GLASSES</div>
+        <div class="product-desc"></div>
+        <div class="price-row">
+          <div>
+            <div class="price">₹300</div>
+            <div class="old">₹800</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:13px">⭐⭐⭐⭐⭐</div>
+            <div class="muted" style="font-size:12px">Stock: 500</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn view">View Details</button>
+        </div>
+      </article>
+      <!-- === /Product Card === -->
+
+    </section>
+    
+
+    <footer>
+      © <span id="year"></span> SIDDHARTH ENTERPRISES
+    </footer>
+  </div>
+
+  <!-- Modal (hidden) -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="close" id="closeBtn">✕</button>
+      <div class="media"><img id="modalImage" src="" alt="product image"></div>
+      <div class="meta">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc" class="muted"></p>
+        <div style="margin:14px 0"><strong id="modalPrice"></strong> <span id="modalOld" class="old" style="margin-left:8px"></span></div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn" id="buyNow">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Helpers
+    function qs(sel, ctx=document){return ctx.querySelector(sel)}
+    function qsa(sel, ctx=document){return Array.from(ctx.querySelectorAll(sel))}
+
+    // Open modal with product data
+    function openProduct(el){
+      var title = el.dataset.title || qs('.product-title', el).textContent
+      var price = el.dataset.price || ''
+      var old = el.dataset.oldprice || ''
+      var desc = el.dataset.desc || qs('.product-desc', el).textContent
+      var img = el.dataset.image || qs('img', el).src
+
+      qs('#modalTitle').textContent = title
+      qs('#modalDesc').textContent = desc
+      qs('#modalPrice').textContent = price ? '₹'+price : ''
+      qs('#modalOld').textContent = old ? '₹'+old : ''
+      qs('#modalImage').src = img
+      qs('#modal').style.display = 'flex'
+      document.body.style.overflow = 'hidden'
+    }
+
+    // Close
+    function closeModal(){
+      qs('#modal').style.display = 'none'
+      document.body.style.overflow = ''
+    }
+
+    // Wire up product buttons
+    qsa('.product').forEach(card=>{
+      card.querySelector('.view').addEventListener('click', ()=> openProduct(card))
+      card.querySelector('img').addEventListener('click', ()=> openProduct(card))
+      card.querySelector('.buy').addEventListener('click', ()=> alert('Added to cart: '+(card.dataset.title || qs('.product-title', card).textContent)))
+    })
+
+    qs('#closeBtn').addEventListener('click', closeModal)
+    qs('#modal').addEventListener('click', function(e){ if(e.target === this) closeModal() })
+
+    // Simple search (client side)
+    qs('#search').addEventListener('input', function(e){
+      var q = e.target.value.trim().toLowerCase()
+      qsa('.product').forEach(card=>{
+        var txt = (card.dataset.title+' '+card.dataset.desc).toLowerCase()
+        card.style.display = txt.indexOf(q) >= 0 ? 'flex' : 'none'
+      })
+    })
+    
+  </script>
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  
+    // Helpers
+    function qs(sel, ctx=document){return ctx.querySelector(sel)}
+    function qsa(sel, ctx=document){return Array.from(ctx.querySelectorAll(sel))}
+  
+    // Open modal with product data
+    function openProduct(el){
+      var title = el.dataset.title || qs('.product-title', el).textContent
+      var price = el.dataset.price || ''
+      var old = el.dataset.oldprice || ''
+      var desc = el.dataset.desc || qs('.product-desc', el).textContent
+      var img = el.dataset.image || qs('img', el).src
+  
+      qs('#modalTitle').textContent = title
+      qs('#modalDesc').textContent = desc
+      qs('#modalPrice').textContent = price ? '₹'+price : ''
+      qs('#modalOld').textContent = old ? '₹'+old : ''
+      qs('#modalImage').src = img
+      qs('#modal').style.display = 'flex'
+      document.body.style.overflow = 'hidden'
+    }
+  
+    // Close
+    function closeModal(){
+      qs('#modal').style.display = 'none'
+      document.body.style.overflow = ''
+    }
+  
+    // Wire up product buttons
+    qsa('.product').forEach(card=>{
+      card.querySelector('.view').addEventListener('click', ()=> openProduct(card))
+      card.querySelector('img').addEventListener('click', ()=> openProduct(card))
+    })
+  
+    qs('#closeBtn').addEventListener('click', closeModal)
+    qs('#modal').addEventListener('click', function(e){ if(e.target === this) closeModal() })
+  
+    // Simple search (client side)
+    qs('#search').addEventListener('input', function(e){
+      var q = e.target.value.trim().toLowerCase()
+      qsa('.product').forEach(card=>{
+        var txt = (card.dataset.title+' '+card.dataset.desc).toLowerCase()
+        card.style.display = txt.indexOf(q) >= 0 ? 'flex' : 'none'
+      })
+    })
+  
+    // ✅ Buy Now button → Google Form link
+    qs('#buyNow').addEventListener('click', ()=> {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header", "_blank"); 
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siddharth Enterprises</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+    }
+
+    /* Premium Header */
+    .site-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .main-nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #e2e8f0;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .main-nav a:hover {
+      color: #38bdf8;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .search-bar {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+    .cart-btn {
+      background: #38bdf8;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cart-btn:hover {
+      background: #0284c7;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #1e293b, #334155);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+    .hero button {
+      background: #38bdf8;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero button:hover {
+      background: #0284c7;
+    }
+
+    /* Products Section */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .product {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product h3 {
+      margin: 10px;
+      font-size: 18px;
+    }
+    .product p {
+      margin: 10px;
+      font-size: 14px;
+      color: #475569;
+    }
+    .product button {
+      margin: 10px;
+      padding: 10px 15px;
+      background: #38bdf8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background: #0284c7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo-area">
+      <img src="images/logo.png" alt="Logo" class="logo-img">
+      <h1 class="brand-name">SIDDHARTH ENTERPRISES</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <input type="text" placeholder="Search products..." class="search-bar">
+      <button class="cart-btn">🛒 Cart</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Welcome to Siddharth Enterprises</h1>
+    <p>Premium products at unbeatable prices. Shop now!</p>
+    <button onclick="document.querySelector('.products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+  </section>
+
+  <!-- Products (8 items from your code) -->
+  <section class="products">
+    <!-- Product 1 -->
+    <div class="product">
+      <img src="images/elephant.jpg" alt="Elephant">
+      <h3>Elephant</h3>
+      <p>Beautiful decorative elephant statue.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+      <img src="images/shoes.jpg" alt="Shoes">
+      <h3>Shoes</h3>
+      <p>Stylish and comfortable sports shoes.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product">
+      <img src="images/headphone.jpg" alt="Headphone">
+      <h3>Headphone</h3>
+      <p>High quality wireless headphones.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product">
+      <img src="images/watch.jpg" alt="Watch">
+      <h3>Watch</h3>
+      <p>Luxury wrist watch for men & women.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product">
+      <img src="images/bag.jpg" alt="Bag">
+      <h3>Bag</h3>
+      <p>Durable and stylish travel backpack.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product">
+      <img src="images/mobile.jpg" alt="Mobile">
+      <h3>Mobile</h3>
+      <p>Latest smartphone with premium features.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product">
+      <img src="images/laptop.jpg" alt="Laptop">
+      <h3>Laptop</h3>
+      <p>Powerful laptop for work and gaming.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product">
+      <img src="images/camera.jpg" alt="Camera">
+      <h3>Camera</h3>
+      <p>Capture moments with high-resolution camera.</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsPtZqsb_RtVpJVzF-xfCGdkL9dbLRAKS1046ykTYQMA8ZSQ/viewform?usp=header','_blank')">Buy Now</button>
+    </div>
+  </section>
+
+</body>
+</html>
